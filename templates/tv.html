@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>TV Mode - TV Transfer</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="card">
+        <h2>رمز الاقتران الخاص بالتلفاز</h2>
+        <div class="pin-display" id="pinText">{{ pin }}</div>
+        <p id="statusText">بانتظار اتصال الهاتف...</p>
+        
+        <div class="progress-box">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div id="fileInfo"></div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+    <script>
+        var pin = "{{ pin }}";
+        setInterval(function() {
+            checkStatus(pin);
+        }, 2000);
+    </script>
+</body>
+</html>
